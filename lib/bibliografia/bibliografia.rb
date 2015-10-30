@@ -1,14 +1,16 @@
-
-
 module Bibliografia
-
+    
     class Bibliografia
 
         attr_accessor :autores
 
         def initialize(autor)
-          @autores = Array.new[]
-        end
+            @autores = Array.new ["#{autor}"]
+        end #initialize
 
-    end
-end
+        def addAutor(nombreAutor)
+            @autores.push "#{nombreAutor}"
+        end #addAutor
+
+    end #class Bibliografia
+end #module Bibliografia
