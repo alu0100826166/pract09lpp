@@ -1,5 +1,11 @@
 require "bibliografia/version"
 
 module Bibliografia
-  # Your code goes here...
+
+class Bibliografia
 end
+
+end
+
+
+
