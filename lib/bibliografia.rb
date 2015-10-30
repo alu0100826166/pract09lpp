@@ -1,15 +1,11 @@
 require "bibliografia/version"
+require "bibliografia/bibliografia"
 
 module Bibliografia
 
-class Bibliografia
-
-   def initialize()
-    end
-
 end
 
-end
+
 
 
 
