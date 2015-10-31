@@ -1,4 +1,4 @@
-
+require 'date'
 require 'spec_helper'
 require 'bibliografia'
 
@@ -6,7 +6,7 @@ describe Bibliografia do
     before :each do
         nombres = Array.new
         nombres = %w{ Autor1 Autor2 }
-        @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo", "Editorial", "Fecha") #Clase Bibliografia del MODULO Bibliografia!!!!!!!
+        @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo", "Editorial", Date.new(2015,10,31)) #Clase Bibliografia del MODULO Bibliografia!!!!!!!
         #@b2 = Bibliografia::Bibliografia.new(nombres, "Titulo")
     end #before each
     context "#Autores" do
@@ -35,7 +35,7 @@ describe Bibliografia do
     
     context "#Fecha Publicacion" do
         it "Debe existir una fecha de publicacion" do
-            @b1.fecha.should eq("Fecha")
+            @b1.fecha.strftime "%d/%m/%Y" eq("31/10/2015")
         end
     end
     
