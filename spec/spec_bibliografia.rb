@@ -66,6 +66,18 @@ describe Bibliografia do
             @b1.getISBN.should eq({ "isbn-10" => " 1937785491", "isbn-13" => " 978-1937785499" })
         end
     end
+    
+    context "#Obtener salida formateada" do
+        it "Debe poderse obtener la bibliografia formateada" do
+            @b1.getReferencia.should eq("Autor1, Autor2
+            Titulo
+            Editorial
+            Numero de edicion 4
+            31/10/2015
+            isbn-10: 1937785491
+            isbn-13: 978-1937785499")
+        end
+    end
 
             
     
