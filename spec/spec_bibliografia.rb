@@ -59,6 +59,14 @@ describe Bibliografia do
             @b1.getAutores.should eq("Autor1","Autor2")
         end
     end
+    
+    
+    context "#Obtener ISBN" do
+        it "Debe poderse obtener los o el ISBN" do
+            @b1.getISBN.should eq({ "isbn-10" => " 1937785491", "isbn-13" => " 978-1937785499" })
+        end
+    end
+
             
     
 end #describe
