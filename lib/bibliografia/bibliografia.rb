@@ -24,7 +24,11 @@ module Bibliografia
 
         def getAutores()
            p autores
-        end #addAutor
+        end #getAutores
+    
+        def getISBN()
+            p isbn
+        end #getISBN
 
     end #class Bibliografia
 end #module Bibliografia
