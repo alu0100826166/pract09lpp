@@ -10,11 +10,13 @@ describe Bibliografia do
         @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo", "Editorial", "Numero de edicion 4", Date.new(2015,10,31), isbn) #Clase Bibliografia del MODULO Bibliografia!!!!!!!
         #@b2 = Bibliografia::Bibliografia.new(nombres, "Titulo")
     end #before each
+    
     context "#Autores" do
         it "Debe existir uno o mas autores" do
           @b1.autores.length.should >= 1
         end
     end #context
+    
     context "#Titulo" do
         it "Debe existir un titulo" do
           @b1.titulo.should eq("Titulo")
@@ -52,6 +54,11 @@ describe Bibliografia do
         end
     end
     
+    context "#Obtener Autores" do
+        it "Debe poderse obtener los autores" do
+            @b1.getAutores.should eq("Autor1","Autor2")
+        end
+    end
             
     
 end #describe
