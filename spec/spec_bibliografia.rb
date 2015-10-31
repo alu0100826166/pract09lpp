@@ -6,7 +6,8 @@ describe Bibliografia do
     before :each do
         nombres = Array.new
         nombres = %w{ Autor1 Autor2 }
-        @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo") #Clase Bibliografia del MODULO Bibliografia!!!!!!!
+        @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo", "Editorial") #Clase Bibliografia del MODULO Bibliografia!!!!!!!
+        #@b2 = Bibliografia::Bibliografia.new(nombres, "Titulo")
     end #before each
     context "#Autores" do
         it "Debe existir uno o mas autores" do
@@ -15,9 +16,21 @@ describe Bibliografia do
     end #context
     context "#Titulo" do
         it "Debe existir un titulo" do
-          expect(@b1.titulo == nil).to eq(false)
+          @b1.titulo.should eq("Titulo")
         end
     end #context
-        
+    
+    # context "#Serie" do
+    #     it "Debe existir o no una serie" do
+    #       expect(defined? @b1.serie).to eq(serie)
+    #       expect(defined? @b2.serie).to eq(false)
+    #     end
+    # end #context
+    
+    context "Editorial" do
+        it "Debe existir una editorial" do
+            @b1.editorial.should eq("Editorial")
+        end
+    end
     
 end #describe
