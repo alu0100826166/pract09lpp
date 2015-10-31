@@ -56,7 +56,7 @@ describe Bibliografia do
     
     context "#Obtener Autores" do
         it "Debe poderse obtener los autores" do
-            @b1.getAutores.should eq("Autor1","Autor2")
+            @b1.getAutores.should eq( ["Autor1", "Autor2"])
         end
     end
             

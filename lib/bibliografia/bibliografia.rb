@@ -22,8 +22,8 @@ module Bibliografia
             end #bucle each
         end #initialize
 
-        def addAutor(nombreAutor)
-            @autores.push "#{nombreAutor}"
+        def getAutores()
+           p autores
         end #addAutor
 
     end #class Bibliografia
