@@ -2,12 +2,13 @@ module Bibliografia
     
     class Bibliografia
 
-        attr_accessor :autores, :titulo
+        attr_accessor :autores, :titulo, :editorial
 
-        def initialize(autor, titulo)
+        def initialize(autor, titulo, ed)
             raise ArgumentError, 'Tiene que haber al menos un autor' if autor.length == 0
             @autores = Array.new
             @titulo = titulo
+            @editorial = ed
             autor.each do |item|
                 @autores.push "#{item}"
             end #bucle each
