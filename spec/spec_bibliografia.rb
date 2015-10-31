@@ -35,7 +35,7 @@ describe Bibliografia do
     
     context "#Fecha Publicacion" do
         it "Debe existir una fecha de publicacion" do
-            @b1.fecha.strftime "%d/%m/%Y" eq("31/10/2015")
+        @b1.fecha.strftime("%d/%m/%Y").should eq("31/10/2015")
         end
     end
     
