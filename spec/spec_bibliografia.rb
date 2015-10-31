@@ -6,7 +6,7 @@ describe Bibliografia do
     before :each do
         nombres = Array.new
         nombres = %w{ Autor1 Autor2 }
-        @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo", "Editorial") #Clase Bibliografia del MODULO Bibliografia!!!!!!!
+        @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo", "Editorial", "Fecha") #Clase Bibliografia del MODULO Bibliografia!!!!!!!
         #@b2 = Bibliografia::Bibliografia.new(nombres, "Titulo")
     end #before each
     context "#Autores" do
@@ -30,6 +30,12 @@ describe Bibliografia do
     context "#Editorial" do
         it "Debe existir una editorial" do
             @b1.editorial.should eq("Editorial")
+        end
+    end
+    
+    context "#Fecha Publicacion" do
+        it "Debe existir una fecha de publicacion" do
+            @b1.fecha.should eq("Fecha")
         end
     end
     
