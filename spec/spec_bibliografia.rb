@@ -54,7 +54,7 @@ describe Bibliografia do
         end
     end
     
-    context "#Obtener Autores" do
+   context "#Obtener Autores" do
         it "Debe poderse obtener los autores" do
             @b1.getAutores.should eq( ["Autor1", "Autor2"])
         end
@@ -69,13 +69,7 @@ describe Bibliografia do
     
     context "#Obtener salida formateada" do
         it "Debe poderse obtener la bibliografia formateada" do
-            @b1.getReferencia.should eq("Autor1, Autor2
-            Titulo
-            Editorial
-            Numero de edicion 4
-            31/10/2015
-            isbn-10: 1937785491
-            isbn-13: 978-1937785499")
+            @b1.getReferencia
         end
     end
 
