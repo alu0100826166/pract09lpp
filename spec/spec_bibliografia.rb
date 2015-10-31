@@ -6,7 +6,8 @@ describe Bibliografia do
     before :each do
         nombres = Array.new
         nombres = %w{ Autor1 Autor2 }
-        @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo", "Editorial", "Numero de edicion 4", Date.new(2015,10,31)) #Clase Bibliografia del MODULO Bibliografia!!!!!!!
+        isbn = { "isbn-10" => " 1937785491", "isbn-13" => " 978-1937785499" }
+        @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo", "Editorial", "Numero de edicion 4", Date.new(2015,10,31), isbn) #Clase Bibliografia del MODULO Bibliografia!!!!!!!
         #@b2 = Bibliografia::Bibliografia.new(nombres, "Titulo")
     end #before each
     context "#Autores" do
@@ -44,5 +45,13 @@ describe Bibliografia do
             @b1.fecha.strftime("%d/%m/%Y").should eq("31/10/2015")
         end
     end
+    
+    context "#ISBN" do
+        it "Debe existir un ISBN o mas" do
+            @b1.isbn.size.should >= 1
+        end
+    end
+    
+            
     
 end #describe
