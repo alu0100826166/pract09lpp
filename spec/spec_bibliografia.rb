@@ -4,11 +4,11 @@ require 'bibliografia'
 
 describe Bibliografia do
     before :each do
+        serie1 = "Serie"
         nombres = Array.new
         nombres = %w{ Autor1 Autor2 }
         isbn = { "isbn-10" => " 1937785491", "isbn-13" => " 978-1937785499" }
-        @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo", "Editorial", "Numero de edicion 4", Date.new(2015,10,31), isbn) #Clase Bibliografia del MODULO Bibliografia!!!!!!!
-        #@b2 = Bibliografia::Bibliografia.new(nombres, "Titulo")
+        @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo", serie1, "Editorial", "Numero de edicion 4", Date.new(2015,10,31), isbn) #Clase Bibliografia del MODULO Bibliografia!!!!!!!
     end #before each
     
     context "#Autores" do
@@ -23,12 +23,10 @@ describe Bibliografia do
         end
     end #context
     
-    # context "#Serie" do
-    #     it "Debe existir o no una serie" do
-    #       expect(defined? @b1.serie).to eq(serie)
-    #       expect(defined? @b2.serie).to eq(false)
-    #     end
-    # end #context
+    context "#Serie" do
+         it "Debe existir o no una serie" do
+           @b1.serie.should eq(serie1)
+    end #context
     
     context "#Editorial" do
         it "Debe existir una editorial" do
