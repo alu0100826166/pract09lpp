@@ -25,7 +25,7 @@ describe Bibliografia do
     
     context "#Serie" do
          it "Debe existir o no una serie" do
-           @b1.serie.should eq(serie1)
+           @b1.serie.should eq("Serie")
     end #context
     
     context "#Editorial" do
@@ -72,5 +72,5 @@ describe Bibliografia do
     end
 
             
-    
-end #describe
+    end
+end

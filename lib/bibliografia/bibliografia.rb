@@ -3,9 +3,9 @@ module Bibliografia
     
     class Bibliografia
 
-        attr_accessor :autores, :titulo, :editorial, :fecha, :n_edicion, :isbn
+        attr_accessor :autores, :titulo, :serie, :editorial, :fecha, :n_edicion, :isbn
 
-        def initialize(autor, titulo, ed, nEd, fecha, isbn)
+        def initialize(autor, titulo, serie, ed, nEd, fecha, isbn)
             raise ArgumentError, 'Tiene que haber al menos un autor' if autor.length == 0
             raise ArgumentError if ( (fecha.class != Date) ||
                                     !(Date.valid_date?(fecha.year,fecha.month, fecha.mday)))
@@ -17,9 +17,12 @@ module Bibliografia
             @editorial = ed
             @fecha = fecha
             @n_edicion = nEd
+            
             autor.each do |item|
                 @autores.push "#{item}"
             end #bucle each
+            
+            @serie = serie
         end #initialize
 
         def getAutores()
