@@ -65,6 +65,7 @@ module Bibliografia
         def initialize (valor)
             @head = Node.new(valor, nil) 
         end
+        
     end
     
     

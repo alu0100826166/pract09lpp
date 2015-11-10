@@ -86,6 +86,10 @@ describe Bibliografia do
         it "Debe existir una lista" do
             @lista.head.value.should eq(@b1)
         end
+       
+        it "Debe extraerse el primer elemento" do
+            @lista.extraer
+        end
     end
 
 
