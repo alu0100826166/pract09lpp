@@ -56,7 +56,7 @@ module Bibliografia
     end #class Bibliografia
     
     
-    Node = Struct.new(:value)
+    Node = Struct.new(:value, :sig)
     
     
     
