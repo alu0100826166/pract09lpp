@@ -100,13 +100,16 @@ describe Bibliografia do
         end
         
         it "Debe extraerse el primer elemento" do
-            @lista.extraer
+            @lista.pop
         end
         
         it "Debe insertar un elemento" do
-            @lista.insertar(@b1)
+            @lista.push(@b1)
         end
         
+        it "Debe extraer todos los elementos de la lista" do
+             @lista.extraer
+        end
     end
 
 end

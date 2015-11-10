@@ -66,13 +66,13 @@ module Bibliografia
             @head = Node.new(valor, nil) 
         end
         
-        def extraer()
+        def pop()
             @head.value.getReferencia()
             @aux = Node.new(@head.value, @head.sig)
             @head = @aux.sig
         end
         
-        def insertar(valor)
+        def push(valor)
             @aux = Node.new(valor, @head)
             @head = @aux
         end
