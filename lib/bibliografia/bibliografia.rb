@@ -59,5 +59,13 @@ module Bibliografia
     Node = Struct.new(:value, :sig)
     
     
+    class ListaEnlazada
+        attr_accessor :head
+        
+        def initialize (valor)
+            @head = Node.new(valor, nil) 
+        end
+    end
+    
     
 end #module Bibliografia

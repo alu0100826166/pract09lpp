@@ -10,7 +10,7 @@ describe Bibliografia do
         isbn = { "isbn-10" => " 1937785491", "isbn-13" => " 978-1937785499" }
         @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo", serie1, "Editorial", "Numero de edicion 4", Date.new(2015,10,31), isbn) #Clase Bibliografia del MODULO Bibliografia!!!!!!!
         @nodo = Bibliografia::Node.new(@b1, nil) #Clase Node
-        @lista= Bibliografia::ListaEnlazada(@b1)
+        @lista= Bibliografia::ListaEnlazada.new(@b1)
     end #before each
     
     context "#Autores" do
@@ -84,7 +84,7 @@ describe Bibliografia do
     
     context "#Debe existir una lista enlazada" do
         it "Debe existir una lista" do
-            @lista.value.should eq(@b1)
+            @lista.head.value.should eq(@b1)
         end
     end
 
