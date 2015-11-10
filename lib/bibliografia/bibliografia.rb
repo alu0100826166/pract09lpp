@@ -68,7 +68,13 @@ module Bibliografia
         
         def extraer()
             @head.value.getReferencia()
-            @head = @head.sig
+            @aux = Node.new(@head.value, @head.sig)
+            @head = @aux.sig
+        end
+        
+        def insertar(valor)
+            @aux = Node.new(valor, @head)
+            @head = @aux
         end
     end
     
