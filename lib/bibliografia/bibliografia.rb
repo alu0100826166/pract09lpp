@@ -76,6 +76,15 @@ module Bibliografia
             @aux = Node.new(valor, @head)
             @head = @aux
         end
+        
+        def extraer
+            @aux = @head
+            while (@aux.sig != nil) do
+                @head.value.getReferencia()
+                @aux = @head
+                @head = @aux.sig
+            end
+        end
     end
     
     

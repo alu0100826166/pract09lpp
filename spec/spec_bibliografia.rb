@@ -99,17 +99,20 @@ describe Bibliografia do
             @lista.head.value.should eq(@b2)
         end
         
-        it "Debe extraerse el primer elemento" do
-            @lista.pop
+        it "Debe insertar un elemento" do
+            @lista.push(@b2)
         end
         
         it "Debe insertar un elemento" do
             @lista.push(@b1)
         end
         
+        # it "Debe extraerse el primer elemento" do
+        #     @lista.pop
+        # end
+        
         it "Debe extraer todos los elementos de la lista" do
-             @lista.extraer
+            @lista.extraer
         end
     end
-
 end
