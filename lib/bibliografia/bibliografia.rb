@@ -55,7 +55,8 @@ module Bibliografia
 
     end #class Bibliografia
     
-  
+    
+    Node = Struct.new(:value)
     
     
     
