@@ -9,6 +9,7 @@ describe Bibliografia do
         nombres = %w{ Autor1 Autor2 }
         isbn = { "isbn-10" => " 1937785491", "isbn-13" => " 978-1937785499" }
         @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo", serie1, "Editorial", "Numero de edicion 4", Date.new(2015,10,31), isbn) #Clase Bibliografia del MODULO Bibliografia!!!!!!!
+        @nodo = Bibliografia::Node.new(3, nil) #Clase Node
     end #before each
     
     context "#Autores" do
@@ -68,6 +69,12 @@ describe Bibliografia do
     context "#Obtener salida formateada" do
         it "Debe poderse obtener la bibliografia formateada" do
             @b1.getReferencia
+        end
+    end
+    
+    context "#Debe existir un nodo" do
+        it "Debe existir un nodo con un valor" do
+            @nodo.value.should eq(3)
         end
     end
 
