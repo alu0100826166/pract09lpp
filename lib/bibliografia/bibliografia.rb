@@ -51,7 +51,7 @@ module Bibliografia
             isbn.each { |i, valor|
             puts ("#{i} : #{valor}") } 
         
-            end #getReferencia
+        end #getReferencia
 
     end #class Bibliografia
     
@@ -62,10 +62,14 @@ module Bibliografia
     class ListaEnlazada
         attr_accessor :head
         
-        def initialize (valor)
+        def initialize(valor)
             @head = Node.new(valor, nil) 
         end
         
+        def extraer()
+            @head.value.getReferencia()
+            @head = @head.sig
+        end
     end
     
     

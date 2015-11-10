@@ -9,8 +9,15 @@ describe Bibliografia do
         nombres = %w{ Autor1 Autor2 }
         isbn = { "isbn-10" => " 1937785491", "isbn-13" => " 978-1937785499" }
         @b1 = Bibliografia::Bibliografia.new(nombres, "Titulo", serie1, "Editorial", "Numero de edicion 4", Date.new(2015,10,31), isbn) #Clase Bibliografia del MODULO Bibliografia!!!!!!!
+        
+        serie2 = "Serie1"
+        nombres1 = Array.new
+        nombres1 = %w{ DaveThomas AndyHunt ChadFowler }
+        isbn1 = { "isbn-1" => " 193778", "isbn-12" => " 978-19377" }
+        @b2 = Bibliografia::Bibliografia.new(nombres1, "Titulo1", serie2, "Editorial1", "Numero de edicion 1", Date.new(2015,11, 10), isbn1)
+        
         @nodo = Bibliografia::Node.new(@b1, nil) #Clase Node
-        @lista= Bibliografia::ListaEnlazada.new(@b1)
+        @lista= Bibliografia::ListaEnlazada.new(@b2)
     end #before each
     
     context "#Autores" do
@@ -84,7 +91,7 @@ describe Bibliografia do
     
     context "#Debe existir una lista enlazada" do
         it "Debe existir una lista" do
-            @lista.head.value.should eq(@b1)
+            @lista.head.value.should eq(@b2)
         end
        
         it "Debe extraerse el primer elemento" do
