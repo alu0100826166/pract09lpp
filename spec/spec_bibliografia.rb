@@ -97,6 +97,10 @@ describe Bibliografia do
         it "Debe extraerse el primer elemento" do
             @lista.extraer
         end
+        
+        it "Debe insertar un elemento" do
+            @lista.insertar(@b1)
+        end
     end
 
 
