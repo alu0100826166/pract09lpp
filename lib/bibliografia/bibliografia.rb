@@ -125,10 +125,11 @@ module Bibliografia
     
     
     class ListaEnlazada
-        attr_accessor :head
-        
+        attr_accessor :head, :tail
+    
         def initialize(valor)
-            @head = Node.new(nil, valor, nil) 
+            @head = Node.new(nil, valor, nil)
+            @tail = @head
         end
         
         def pop()
