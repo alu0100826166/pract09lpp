@@ -117,5 +117,9 @@ describe Bibliografia do
         it "La lista debe poder sacar todos los elementos por delante" do
             @Lista.extraer_delante()
         end
+        
+        it "La lista debe poder sacar todos los elementos por detras" do
+            @Lista.extraer_detras()
+        end
     end
 end
