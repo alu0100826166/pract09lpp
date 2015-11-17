@@ -91,5 +91,11 @@ describe Bibliografia do
         it "La lista debe tener un previo en la cabecera" do
             @Lista.head.prev.should eq(nil)
         end
+        
+        it "La lista debe tener una cola con un prev, un valor y un siguiente" do
+            @Lista.tail.prev.should eq(nil)
+            @Lista.tail.value.should eq(@Lista.tail.value)
+            @Lista.tail.sig.should eq(nil)
+        end
     end
 end
