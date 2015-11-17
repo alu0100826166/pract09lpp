@@ -106,8 +106,12 @@ describe Bibliografia do
             @Lista.insertar_detras(@doc)
         end
         
-        it "La lista debe poder sacar por detras uno a uno" do
+        it "La lista debe poder sacar por delante un elemento" do
             @Lista.sacar_delante()
+        end
+        
+        it "La lista debe poder sacar por detras un elemento" do
+            @Lista.sacar_detras()
         end
     end
 end
