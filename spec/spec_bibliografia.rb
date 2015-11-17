@@ -22,6 +22,10 @@ describe Bibliografia do
         autores = %w{ Autor1 Autor2 }
         url = "www.libroelectronico.com"
         @doc = Bibliografia::DocumentoElectronico.new(autores, "TituloDoc", Date.new(2015, 11, 17), url)
+        
+        
+        @Node = Struct.new(:prev, :value, :sig)
+        @Lista = Bibliografia::ListaEnlazada.new(@libro)
     end #before each
 
 ########################################################PRUEBAS PRACTICA 8
@@ -73,7 +77,11 @@ describe Bibliografia do
         it "El objeto doc de la clase DocumentoElectronico debe ser objeto de clase Bibliografia" do
             (@doc.kind_of?Bibliografia::Bibliografia).should eq(true)
         end
-        
-        
+    end#Context
+    
+    context "#Debe existir una lista doblemente enlazada" do
+        it "Debe Inicializarse una lista doblemente enlazada con un valor" do
+            @Lista.head.value.should eq(@Lista.head.value)
+        end
     end
 end
