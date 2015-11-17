@@ -38,16 +38,30 @@ describe Bibliografia do
             @doc.should eq (@doc)
         end
         
-        it "La clase libro debe pertenecer a clase Bibliografia" do
-            @libro.is_a?Bibliografia
+        it "el objeto libro debe ser instancia de clase Libro" do
+            @libro.class.should eq (Bibliografia::Libro)
         end
         
-        it "La clase revista debe pertenecer a clase Bibliografia" do
-            @revista.is_a?Bibliografia
+        it "el objeto revista debe ser instancia de clase Revista" do
+            @revista.class.should eq(Bibliografia::Revista)
         end
         
-        it "La clase DocumentoElectronico debe pertenecer a clase Bibliografia" do
-            @doc.is_a?Bibliografia
+        it "el objeto doc debe ser instancia de clase DocumentoElectronico" do
+           @doc.class.should eq (Bibliografia::DocumentoElectronico)
         end
+        
+        it "El objeto doc de la clase DocumentoElectronico no debe ser instancia de clase Bibliografia" do
+            (@doc.instance_of?Bibliografia::Bibliografia).should eq(false)
+        end
+        
+        it "El objeto libro de la clase Libro no debe ser instancia de clase Bibliografia" do
+            (@libro.instance_of?Bibliografia::Bibliografia).should eq(false)
+        end
+        
+        it "El objeto revista de la clase Revista no debe ser instancia de clase Bibliografia" do
+            (@revista.instance_of?Bibliografia::Bibliografia).should eq(false)
+        end
+        
+        
     end
 end
