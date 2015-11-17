@@ -37,5 +37,9 @@ describe Bibliografia do
         it "Debe existir una clase documento electronico" do
             @doc.should eq (@doc)
         end
+        
+        it "La clase libro debe pertenecer a clase Bibliografia" do
+            @libro.is_a?Bibliografia
+        end
     end
 end
