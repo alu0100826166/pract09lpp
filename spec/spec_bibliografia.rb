@@ -80,12 +80,16 @@ describe Bibliografia do
     end#Context
     
     context "#Debe existir una lista doblemente enlazada" do
-        it "Debe Inicializarse una lista doblemente enlazada con un valor" do
+        it "Debe Inicializarse una lista doblemente enlazada con un valor en la cabecera" do
             @Lista.head.value.should eq(@Lista.head.value)
         end
         
-        it "La lista debe tener un siguiente" do
+        it "La lista debe tener un siguiente en la cabecera" do
             @Lista.head.sig.should eq(nil)
+        end
+        
+        it "La lista debe tener un previo en la cabecera" do
+            @Lista.head.prev.should eq(nil)
         end
     end
 end
