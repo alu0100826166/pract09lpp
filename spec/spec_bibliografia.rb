@@ -62,6 +62,18 @@ describe Bibliografia do
             (@revista.instance_of?Bibliografia::Bibliografia).should eq(false)
         end
         
+        it "El objeto revista de la clase Revista debe ser objeto de clase Bibliografia" do
+            (@revista.is_a?Bibliografia::Bibliografia).should eq(true)
+        end
+        
+        it "El objeto libro de la clase Libro debe ser objeto de clase Bibliografia" do
+            (@libro.is_a?Bibliografia::Bibliografia).should eq(true)
+        end
+        
+        it "El objeto doc de la clase DocumentoElectronico debe ser objeto de clase Bibliografia" do
+            (@doc.kind_of?Bibliografia::Bibliografia).should eq(true)
+        end
+        
         
     end
 end
