@@ -25,18 +25,18 @@ module Bibliografia
     end #class Bibliografia
     
     class Libro < Bibliografia
-        attr_accessor :ISBN, :serie, :editorial, :n_edicion
+        attr_accessor :isbn, :serie, :editorial, :n_edicion
         def initialize(autor, titulo, serie, ed, nEd, fecha, isbn)
             super(autor, titulo, fecha)
             raise ArgumentError if (isbn.class != Hash)
-            @ISBN=isbn
+            @isbn=isbn
             @editorial = ed
             @n_edicion = nEd
             @serie = serie
         end
         
         def getISBN()
-            p @ISBN
+            p @isbn
         end #getISBN
         
         def getReferencia()
@@ -147,9 +147,9 @@ module Bibliografia
         end
         
         
-        def push(valor)
-            @aux = Node.new(valor, @head)
-            @head = @aux
+        def sacar_delante()
+            @head.value.getReferencia()
+            @head = @head.sig
         end
         
         def extraer
@@ -160,7 +160,7 @@ module Bibliografia
                 @head = @aux.sig
             end
         end
-    end
-    
-    
+        
+        
+    end#clase Lista
 end #module Bibliografia

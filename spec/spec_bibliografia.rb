@@ -105,5 +105,9 @@ describe Bibliografia do
         it "La lista debe poder insertar al final" do
             @Lista.insertar_detras(@doc)
         end
+        
+        it "La lista debe poder sacar por detras uno a uno" do
+            @Lista.sacar_delante()
+        end
     end
 end
