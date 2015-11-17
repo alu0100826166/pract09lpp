@@ -173,6 +173,7 @@ module Bibliografia
             @aux=@tail
             while(@aux.prev != nil) do
                 @tail.value.getReferencia()
+                puts ""
                 @aux = @tail
                 @tail = @aux.prev
             end
