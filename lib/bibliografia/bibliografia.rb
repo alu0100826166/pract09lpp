@@ -53,7 +53,7 @@ module Bibliografia
     end #class Bibliografia
     
     class Libro < Bibliografia
-        attr_accessor :ISBN, :serie
+        attr_accessor :ISBN
         def initialize(autor, titulo, serie, ed, nEd, fecha, isbn)
             super(autor, titulo, serie, ed, nEd, fecha)
             raise ArgumentError if (isbn.class != Hash)
@@ -63,8 +63,19 @@ module Bibliografia
          def getISBN()
             p @ISBN
         end #getISBN
-    end
+    end#Clase Libro
     
+    class Revista < Bibliografia
+        attr_accessor :ISSN
+        def initialize(autor, titulo, serie, ed, nEd, fecha, issn)
+            super(autor, titulo, serie, ed, nEd, fecha)
+            @ISSN=issn
+        end
+        
+        def getISSN()
+            p @ISSN
+        end #getISBN
+    end#Clase Revista
     
     
     
