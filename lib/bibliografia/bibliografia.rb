@@ -132,11 +132,20 @@ module Bibliografia
             @tail = @head
         end
         
+        
         def insertar_delante(valor)
             @aux = Node.new(nil, valor, @head)
             @head.prev = @aux
             @head = @aux
         end
+        
+        
+        def insertar_detras(valor)
+            @aux = Node.new(@tail, valor, nil)
+            @tail.sig = @aux
+            @tail = @aux
+        end
+        
         
         def push(valor)
             @aux = Node.new(valor, @head)
