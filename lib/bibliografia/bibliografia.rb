@@ -74,8 +74,21 @@ module Bibliografia
         
         def getISSN()
             p @ISSN
-        end #getISBN
+        end #getISSN
     end#Clase Revista
+    
+    
+    class DocumentoElectronico < Bibliografia
+        attr_accessor :URL
+        def initialize(autor, titulo, serie, ed, nEd, fecha,url)
+            super(autor, titulo, serie, ed, nEd, fecha)
+            @URL=url
+        end
+        
+        def getURL()
+            p @URL
+        end #getURL
+    end#Clase DocuemntoElectronico
     
     
     
