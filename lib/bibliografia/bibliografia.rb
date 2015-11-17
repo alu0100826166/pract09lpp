@@ -121,14 +121,14 @@ module Bibliografia
     end#Clase DocuemntoElectronico
     
     
-    Node = Struct.new(:value, :sig)
+    Node = Struct.new(:prev, :value, :sig)
     
     
     class ListaEnlazada
         attr_accessor :head
         
         def initialize(valor)
-            @head = Node.new(valor, nil) 
+            @head = Node.new(nil, valor, nil) 
         end
         
         def pop()
