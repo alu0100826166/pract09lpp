@@ -3,16 +3,15 @@ module Bibliografia
     
     class Bibliografia
 
-        attr_accessor :autores, :titulo, :serie, :editorial, :fecha, :n_edicion, :isbn
+        attr_accessor :autores, :titulo, :serie, :editorial, :fecha, :n_edicion
 
-        def initialize(autor, titulo, serie, ed, nEd, fecha, isbn)
+        def initialize(autor, titulo, serie, ed, nEd, fecha)
             raise ArgumentError, 'Tiene que haber al menos un autor' if autor.length == 0
             raise ArgumentError if ( (fecha.class != Date) ||
                                     !(Date.valid_date?(fecha.year,fecha.month, fecha.mday)))
             
-            raise ArgumentError if (isbn.class != Hash)
+            
             @autores = Array.new
-            @isbn = isbn
             @titulo = titulo
             @editorial = ed
             @fecha = fecha
@@ -29,9 +28,7 @@ module Bibliografia
            p @autores
         end #getAutores
     
-        def getISBN()
-            p @isbn
-        end #getISBN
+       
 
         def getReferencia()
             #Imprimimos los nombres formateados
@@ -54,6 +51,22 @@ module Bibliografia
         end #getReferencia
 
     end #class Bibliografia
+    
+    class Libro < Bibliografia
+        attr_accessor :ISBN, :serie
+        def initialize(autor, titulo, serie, ed, nEd, fecha, isbn)
+            super(autor, titulo, serie, ed, nEd, fecha)
+            raise ArgumentError if (isbn.class != Hash)
+            @ISBN=isbn
+        end
+        
+         def getISBN()
+            p @ISBN
+        end #getISBN
+    end
+    
+    
+    
     
     
     Node = Struct.new(:value, :sig)

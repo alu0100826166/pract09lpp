@@ -19,8 +19,11 @@ describe Bibliografia do
         # @nodo = Bibliografia::Node.new(@b1, nil) #Clase Node
         # @lista= Bibliografia::ListaEnlazada.new(@b2)
         
-        
-        @libro = Bibliografia::Libro.new()
+        serie = "Serie1"
+        autores = Array.new
+        autores = %w{ Autor1 Autor2 }
+        isbn = { "isbn-1" => " 193778", "isbn-12" => " 978-19377" }
+        @libro = Bibliografia::Libro.new(autores, "TituloLibro", serie, "Editorial Libro", "Numero Edicion Libro", Date.new(2015, 11, 17), isbn)
     end #before each
     
 #     context "#Autores" do
@@ -122,7 +125,7 @@ describe Bibliografia do
 ########################################################PRUEBAS PRACTICA 8
     context "#Debe existir una clase libro" do
         it "Debe existir una clase libro" do
-            @libro.should.eq (@libro)
+            @libro.should.should eq (@libro)
         end
     end
 end
