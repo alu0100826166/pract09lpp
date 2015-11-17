@@ -158,14 +158,15 @@ module Bibliografia
             @tail = @tail.prev
         end
         
-        def extraer
+       
+        def extraer_delante()
             @aux = @head
-            while (@aux.sig != nil) do
-                @head.value.getReferencia()
+            while(@aux.sig != nil) do
+                puts @head.value
                 @aux = @head
                 @head = @aux.sig
             end
-        end
+        end   
         
         
     end#clase Lista
