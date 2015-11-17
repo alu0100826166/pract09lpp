@@ -64,14 +64,14 @@ module Bibliografia
         attr_accessor :ISSN
         def initialize(autor, titulo, serie, ed, nEd, fecha, issn)
             super(autor, titulo, fecha)
-            @ISSN=issn
+            @issn=issn
             @editorial = ed
             @n_edicion = nEd
             @serie = serie
         end
         
         def getISSN()
-            p @ISSN
+            p @issn
         end #getISSN
         
         def getReferencia()
@@ -88,20 +88,20 @@ module Bibliografia
             puts ("#{@editorial}")
             puts ("#{@n_edicion}")
             puts @fecha.strftime("%d/%m/%Y")
-            puts ("#{@ISSN}")
+            puts ("#{@issn}")
         end #getReferencia
     end#Clase Revista
     
     
     class DocumentoElectronico < Bibliografia
-        attr_accessor :URL
+        attr_accessor :url
         def initialize(autor, titulo, fecha, url)
             super(autor, titulo, fecha)
-            @URL=url
+            @url=url
         end
         
         def getURL()
-            p @URL
+            p @url
         end #getURL
         
         def getReferencia()
@@ -116,7 +116,7 @@ module Bibliografia
             end #do
             puts ("#{@titulo}") #Imprimimos el titulo
             puts @fecha.strftime("%d/%m/%Y")
-            puts ("#{@URL}")
+            puts ("#{@url}")
         end #getReferencia
     end#Clase DocuemntoElectronico
     
@@ -150,6 +150,12 @@ module Bibliografia
         def sacar_delante()
             @head.value.getReferencia()
             @head = @head.sig
+        end
+        
+        
+        def sacar_detras()
+            @tail.value.getReferencia()
+            @tail = @tail.prev
         end
         
         def extraer
