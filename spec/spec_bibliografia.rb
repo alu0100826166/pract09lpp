@@ -11,17 +11,17 @@ describe Bibliografia do
         @libro = Bibliografia::Libro.new(autores, "TituloLibro", serie, "Editorial Libro", "Numero Edicion Libro", Date.new(2015, 11, 17), isbn)
         
         
-        serie = "Serie2"
+        serie2 = "Serie2"
         autores = Array.new
         autores = %w{ Autor1 Autor2 }
         issn = "1133-9721"
-        @revista = Bibliografia::Revista.new(autores, "TituloRevista", serie, "Editorial Revista", "Numero Edicion Revista", Date.new(2015, 11, 17), issn)
+        @revista = Bibliografia::Revista.new(autores, "TituloRevista", serie2, "Editorial Revista", "Numero Edicion Revista", Date.new(2015, 11, 17), issn)
         
-        serie = "Serie3"
+        
         autores = Array.new
         autores = %w{ Autor1 Autor2 }
         url = "www.libroelectronico.com"
-        @doc = Bibliografia::DocumentoElectronico.new(autores, "TituloDoc", serie, "Editorial Doc", "Numero Edicion Doc", Date.new(2015, 11, 17), url)
+        @doc = Bibliografia::DocumentoElectronico.new(autores, "TituloDoc", Date.new(2015, 11, 17), url)
     end #before each
 
 ########################################################PRUEBAS PRACTICA 8

@@ -1,35 +1,44 @@
-
+require 'date'
 module Bibliografia
     
     class Bibliografia
 
-        attr_accessor :autores, :titulo, :serie, :editorial, :fecha, :n_edicion
+        attr_accessor :autores, :titulo, :fecha
 
-        def initialize(autor, titulo, serie, ed, nEd, fecha)
+        def initialize(autor, titulo, fecha)
             raise ArgumentError, 'Tiene que haber al menos un autor' if autor.length == 0
             raise ArgumentError if ( (fecha.class != Date) ||
                                     !(Date.valid_date?(fecha.year,fecha.month, fecha.mday)))
-            
-            
             @autores = Array.new
             @titulo = titulo
-            @editorial = ed
             @fecha = fecha
-            @n_edicion = nEd
             
             autor.each do |item|
                 @autores.push "#{item}"
             end #bucle each
             
-            @serie = serie
         end #initialize
 
         def getAutores()
            p @autores
         end #getAutores
+    end #class Bibliografia
     
-       
-
+    class Libro < Bibliografia
+        attr_accessor :ISBN, :serie, :editorial, :n_edicion
+        def initialize(autor, titulo, serie, ed, nEd, fecha, isbn)
+            super(autor, titulo, fecha)
+            raise ArgumentError if (isbn.class != Hash)
+            @ISBN=isbn
+            @editorial = ed
+            @n_edicion = nEd
+            @serie = serie
+        end
+        
+        def getISBN()
+            p @ISBN
+        end #getISBN
+        
         def getReferencia()
             #Imprimimos los nombres formateados
             @autores.each_with_index do |nombre, i|
@@ -49,48 +58,67 @@ module Bibliografia
             puts ("#{i} : #{valor}") } 
         
         end #getReferencia
-
-    end #class Bibliografia
-    
-    class Libro < Bibliografia
-        attr_accessor :ISBN
-        def initialize(autor, titulo, serie, ed, nEd, fecha, isbn)
-            super(autor, titulo, serie, ed, nEd, fecha)
-            raise ArgumentError if (isbn.class != Hash)
-            @ISBN=isbn
-        end
-        
-         def getISBN()
-            p @ISBN
-        end #getISBN
     end#Clase Libro
     
     class Revista < Bibliografia
         attr_accessor :ISSN
         def initialize(autor, titulo, serie, ed, nEd, fecha, issn)
-            super(autor, titulo, serie, ed, nEd, fecha)
+            super(autor, titulo, fecha)
             @ISSN=issn
+            @editorial = ed
+            @n_edicion = nEd
+            @serie = serie
         end
         
         def getISSN()
             p @ISSN
         end #getISSN
+        
+        def getReferencia()
+            #Imprimimos los nombres formateados
+            @autores.each_with_index do |nombre, i|
+                print(nombre)
+                if (i == (@autores.length-1))
+                    puts #Imprimimos el salto de linea
+                else
+                    print(", ") #Imprimimos la coma
+                end #if
+            end #do
+            puts ("#{@titulo}") #Imprimimos el titulo
+            puts ("#{@editorial}")
+            puts ("#{@n_edicion}")
+            puts @fecha.strftime("%d/%m/%Y")
+            puts ("#{@ISSN}")
+        end #getReferencia
     end#Clase Revista
     
     
     class DocumentoElectronico < Bibliografia
         attr_accessor :URL
-        def initialize(autor, titulo, serie, ed, nEd, fecha,url)
-            super(autor, titulo, serie, ed, nEd, fecha)
+        def initialize(autor, titulo, fecha, url)
+            super(autor, titulo, fecha)
             @URL=url
         end
         
         def getURL()
             p @URL
         end #getURL
+        
+        def getReferencia()
+            #Imprimimos los nombres formateados
+            @autores.each_with_index do |nombre, i|
+                print(nombre)
+                if (i == (@autores.length-1))
+                    puts #Imprimimos el salto de linea
+                else
+                    print(", ") #Imprimimos la coma
+                end #if
+            end #do
+            puts ("#{@titulo}") #Imprimimos el titulo
+            puts @fecha.strftime("%d/%m/%Y")
+            puts ("#{@URL}")
+        end #getReferencia
     end#Clase DocuemntoElectronico
-    
-    
     
     
     Node = Struct.new(:value, :sig)
