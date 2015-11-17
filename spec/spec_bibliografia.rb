@@ -45,5 +45,9 @@ describe Bibliografia do
         it "La clase revista debe pertenecer a clase Bibliografia" do
             @revista.is_a?Bibliografia
         end
+        
+        it "La clase DocumentoElectronico debe pertenecer a clase Bibliografia" do
+            @doc.is_a?Bibliografia
+        end
     end
 end
