@@ -162,7 +162,7 @@ module Bibliografia
         def extraer_delante()
             @aux = @head
             while(@aux.sig != nil) do
-                puts @head.value
+                @head.value.getReferencia()
                 @aux = @head
                 @head = @aux.sig
             end
@@ -172,7 +172,7 @@ module Bibliografia
         def extraer_detras()
             @aux=@tail
             while(@aux.prev != nil) do
-                puts @tail.value
+                @tail.value.getReferencia()
                 @aux = @tail
                 @tail = @aux.prev
             end
