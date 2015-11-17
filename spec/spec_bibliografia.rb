@@ -97,5 +97,9 @@ describe Bibliografia do
             @Lista.tail.value.should eq(@Lista.tail.value)
             @Lista.tail.sig.should eq(nil)
         end
+        
+        it "La lista debe poder insertar al principio" do
+            @Lista.insertar_delante(@revista)
+        end
     end
 end
