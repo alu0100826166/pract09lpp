@@ -83,5 +83,9 @@ describe Bibliografia do
         it "Debe Inicializarse una lista doblemente enlazada con un valor" do
             @Lista.head.value.should eq(@Lista.head.value)
         end
+        
+        it "La lista debe tener un siguiente" do
+            @Lista.head.sig.should eq(nil)
+        end
     end
 end
