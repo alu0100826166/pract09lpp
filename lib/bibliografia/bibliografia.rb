@@ -166,8 +166,17 @@ module Bibliografia
                 @aux = @head
                 @head = @aux.sig
             end
-        end   
+        end
         
         
+        def extraer_detras()
+            @aux=@tail
+            while(@aux.prev != nil) do
+                puts @tail.value
+                @aux = @tail
+                @tail = @aux.prev
+            end
+        end
     end#clase Lista
+    
 end #module Bibliografia
