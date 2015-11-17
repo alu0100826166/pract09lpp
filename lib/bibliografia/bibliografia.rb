@@ -132,10 +132,10 @@ module Bibliografia
             @tail = @head
         end
         
-        def pop()
-            @head.value.getReferencia()
-            @aux = Node.new(@head.value, @head.sig)
-            @head = @aux.sig
+        def insertar_delante(valor)
+            @aux = Node.new(nil, valor, @head)
+            @head.prev = @aux
+            @head = @aux
         end
         
         def push(valor)

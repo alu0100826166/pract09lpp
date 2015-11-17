@@ -3,7 +3,7 @@ require 'spec_helper'
 require 'bibliografia'
 
 describe Bibliografia do
-    before :all do
+    before :each do
         serie = "Serie1"
         autores = Array.new
         autores = %w{ Autor1 Autor2 }
