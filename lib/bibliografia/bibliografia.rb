@@ -133,6 +133,7 @@ module Bibliografia
     
     
     class ListaEnlazada
+        include Enumerable
         attr_accessor :head, :tail
     
         def initialize(valor)
@@ -186,6 +187,20 @@ module Bibliografia
                 @tail = @aux.prev
             end
         end
+        
+        
+        def each
+            @aux = @head
+            while(@aux.sig != nil) do
+                yield @head.value
+                @aux = @head
+                @head = @aux.sig
+            end
+        end
+        
+        
+        
+        
     end#clase Lista
     
 end #module Bibliografia
