@@ -62,9 +62,7 @@ PLATFORMS
 
 DEPENDENCIES
   bibliografia!
-  bundler (~> 1.7.12)
-  bundler (~> 1.7.9)
-  bundler (~> 1.7.6)
+  bundler (~> 1.8)
   guard
   guard-bundler
   guard-rspec
