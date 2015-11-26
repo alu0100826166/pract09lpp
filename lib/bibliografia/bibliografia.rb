@@ -1,8 +1,10 @@
 require 'date'
+
+
 module Bibliografia
     
     class Bibliografia
-
+        include Comparable
         attr_accessor :autores, :titulo, :fecha
 
         def initialize(autor, titulo, fecha)
@@ -22,6 +24,12 @@ module Bibliografia
         def getAutores()
            p @autores
         end #getAutores
+        
+        
+        def <=>(other)
+            @titulo <=> other.titulo 
+        end
+        
     end #class Bibliografia
     
     class Libro < Bibliografia
